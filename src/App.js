@@ -1,17 +1,26 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import "./App.css";
 
-import { FaSpotify, FaApple, FaInstagram, FaYoutube } from "react-icons/fa";
+import {
+  FaSpotify,
+  FaApple,
+  FaInstagram,
+  FaYoutube,
+  FaBars,
+  FaTimes,
+} from "react-icons/fa";
+
 import heroImage from "./assets/images/oracle-portrait.jpeg";
-import albumCover from "./assets/images/oracle-portrait.jpeg";
+import albumCover from "./assets/images/album.jpeg";
 import bioImage from "./assets/images/oracle-portrait.jpeg";
 
 const App = () => {
   const typedRef = useRef(null);
   const progressRef = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
@@ -39,6 +48,7 @@ const App = () => {
             trigger: el,
             start: "top 80%",
             toggleActions: "play none none none",
+            invalidateOnRefresh: true,
           },
         }
       );
@@ -63,14 +73,15 @@ const App = () => {
       <div className="scroll-progress-bar" ref={progressRef}></div>
 
       <nav className="navbar">
-        <a href="#" className="logo">
-          Oracle
-        </a>
-        <ul className="nav-links">
-          <li><a href="#welcome">Welcome</a></li>
-          <li><a href="#latest">Latest</a></li>
-          <li><a href="#bio">Bio</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <a href="#" className="logo">Oracle</a>
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+        <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <li><a href="#welcome" onClick={() => setMenuOpen(false)}>Welcome</a></li>
+          <li><a href="#latest" onClick={() => setMenuOpen(false)}>Latest</a></li>
+          <li><a href="#bio" onClick={() => setMenuOpen(false)}>Bio</a></li>
+          <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
         </ul>
       </nav>
 
@@ -80,7 +91,6 @@ const App = () => {
           <p>Blending Gen Z energy with millennial wisdom.</p>
           <a href="#latest" className="cta">Listen Now</a>
         </div>
-        <div className="hero-right" style={{ backgroundImage: `url(${heroImage})` }}></div>
       </header>
 
       <section id="welcome" className="fade-section welcome-section parallax">
@@ -107,7 +117,7 @@ const App = () => {
         </div>
         <div className="bio-text">
           <h2>Meet Oracle</h2>
-          <p>Oracle is a visionary storyteller, blending generational voices through rhythm and rhyme. With influences that span decades, Oracle creates timeless music that resonates deeply with all.</p>
+          <p>Welcome to ORACLE RECORDS the home of oracles storytelling fans. While  OracleTheStoryteller shares his own experiences with stories in music, his fans are much welcome to use this platform as a group discussion settings where you join the group chat where they’re talking about what you’re interested to listen to at the time. Enjoy storyteller activity, gifts for the needy, or simply just that friend you made inside the group chat. Lol, You Weirdos! Lol who would have thought you could make a friend that makes you theirs back. Well whatever the situation is with you in life LISTEN, LIKE or SHARE YOURS WITH US! Thank you! From your favourite storytelling musician. Stay tuned! For meh!🐐</p>
         </div>
       </section>
 

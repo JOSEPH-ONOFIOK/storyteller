@@ -69,6 +69,7 @@ body, html {
   background-size: cover;
   background-position: center right;
   position: relative;
+  
 }
 
 .hero-left {
@@ -104,15 +105,6 @@ body, html {
   background-color: #c2185b;
 }
 
-.hero-right {
-  flex: 1;
-  background-position: center;
-  background-size: cover;
-  min-height: 500px;
-  border-radius: 20px;
-  filter: brightness(0.5) blur(2px);
-  animation: fadeIn 2s ease-out;
-}
 
 /* Section Styles */
 section {
@@ -171,6 +163,7 @@ section p {
   width: 300px;
   border-radius: 50%;
   object-fit: cover;
+  
 }
 
 .bio-text {
@@ -337,4 +330,55 @@ img {
   .album-container img {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   }
+}
+/* ... all previous styles remain above this line */
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* Mobile Navbar */
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
+
+/* Touch scrolling fix */
+html {
+  -webkit-overflow-scrolling: touch;
 }
