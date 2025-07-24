@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/storyteller/static/css/main.b7c90af1.css",
-    "main.js": "/storyteller/static/js/main.2a0b7886.js",
+    "main.css": "/storyteller/static/css/main.4d80a9fa.css",
+    "main.js": "/storyteller/static/js/main.9471848a.js",
     "static/media/oracle-portrait.jpeg": "/storyteller/static/media/oracle-portrait.7bf697d967a2c10c519e.jpeg",
     "static/media/album.jpeg": "/storyteller/static/media/album.633fe738f944440e4296.jpeg",
     "index.html": "/storyteller/index.html",
-    "main.b7c90af1.css.map": "/storyteller/static/css/main.b7c90af1.css.map",
-    "main.2a0b7886.js.map": "/storyteller/static/js/main.2a0b7886.js.map"
+    "main.4d80a9fa.css.map": "/storyteller/static/css/main.4d80a9fa.css.map",
+    "main.9471848a.js.map": "/storyteller/static/js/main.9471848a.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7c90af1.css",
-    "static/js/main.2a0b7886.js"
+    "static/css/main.4d80a9fa.css",
+    "static/js/main.9471848a.js"
   ]
 }
