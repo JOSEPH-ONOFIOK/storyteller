@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import "./App.css";
-
 import {
   FaSpotify,
   FaApple,
@@ -12,6 +10,8 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+
+import "./App.css";
 
 import heroImage from "./assets/images/oracle-portrait.jpeg";
 import albumCover from "./assets/images/album.jpeg";
@@ -25,17 +25,19 @@ const App = () => {
   useEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: ["Oracle the Storyteller", "Gen Z Meets Millennial Wisdom"],
-      typeSpeed: 50,
+      typeSpeed: 50,        // Slower typing
       backSpeed: 25,
       backDelay: 2000,
       loop: true,
     });
+
     return () => typed.destroy();
   }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const fadeElements = gsap.utils.toArray(".fade-section");
+
     fadeElements.forEach((el) => {
       gsap.fromTo(
         el,
@@ -64,6 +66,7 @@ const App = () => {
         progressRef.current.style.width = `${scrollPercent}%`;
       }
     };
+
     window.addEventListener("scroll", updateProgressBar);
     return () => window.removeEventListener("scroll", updateProgressBar);
   }, []);
@@ -117,7 +120,9 @@ const App = () => {
         </div>
         <div className="bio-text">
           <h2>Meet Oracle</h2>
-          <p>Welcome to ORACLE RECORDS the home of oracles storytelling fans. While  OracleTheStoryteller shares his own experiences with stories in music, his fans are much welcome to use this platform as a group discussion settings where you join the group chat where they’re talking about what you’re interested to listen to at the time. Enjoy storyteller activity, gifts for the needy, or simply just that friend you made inside the group chat. Lol, You Weirdos! Lol who would have thought you could make a friend that makes you theirs back. Well whatever the situation is with you in life LISTEN, LIKE or SHARE YOURS WITH US! Thank you! From your favourite storytelling musician. Stay tuned! For meh!🐐</p>
+          <p>
+            Welcome to ORACLE RECORDS, the home of storytelling fans. Oracle shares his experience through music. Join our group chat to discuss your favorite sounds, participate in giveaways, or simply make new friends. Whether you're here to listen or share your story — you're welcome. Stay tuned! 🐐
+          </p>
         </div>
       </section>
 

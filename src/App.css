@@ -1,17 +1,25 @@
-/* Global Styles */
-body, html {
+/* === Global Styles === */
+html, body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
   background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
   color: #fff;
+  -webkit-overflow-scrolling: touch;
 }
 
 .App {
   overflow-x: hidden;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === Scroll Progress Bar === */
 .scroll-progress-bar {
   position: fixed;
   top: 0;
@@ -23,6 +31,7 @@ body, html {
   transition: width 0.2s ease-out;
 }
 
+/* === Navbar === */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -42,6 +51,15 @@ body, html {
   text-decoration: none;
 }
 
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 11;
+  margin-left: auto;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -59,6 +77,7 @@ body, html {
   color: #fff;
 }
 
+/* === Hero Section === */
 .hero {
   display: flex;
   align-items: center;
@@ -69,7 +88,6 @@ body, html {
   background-size: cover;
   background-position: center right;
   position: relative;
-  
 }
 
 .hero-left {
@@ -105,8 +123,7 @@ body, html {
   background-color: #c2185b;
 }
 
-
-/* Section Styles */
+/* === Section Styles === */
 section {
   padding: 6rem 2rem;
   text-align: center;
@@ -123,6 +140,7 @@ section p {
   font-size: 1.1rem;
 }
 
+/* === Welcome, Latest, Bio, Contact === */
 .album-container {
   display: flex;
   flex-direction: column;
@@ -163,7 +181,6 @@ section p {
   width: 300px;
   border-radius: 50%;
   object-fit: cover;
-  
 }
 
 .bio-text {
@@ -183,6 +200,7 @@ section p {
   color: #e91e63;
 }
 
+/* === Footer === */
 .footer {
   background: #111;
   padding: 2rem;
@@ -191,14 +209,14 @@ section p {
   color: #888;
 }
 
-/* Parallax */
+/* === Parallax === */
 .parallax {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
-/* Animations */
+/* === Animation === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -229,29 +247,58 @@ section p {
   opacity: 1;
   transform: translateY(0);
 }
-/* [All previous styles stay intact above this line] */
 
-/* === Responsive Mobile Styles === */
+/* === Responsive Styles === */
 @media screen and (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    margin-left: auto;
   }
 
   .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    width: 100%;
     flex-direction: column;
     gap: 1rem;
+    padding: 1rem 0;
+    transform: translateY(-200%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
+      margin-top: -5px;
+  }
+
+  .nav-links li {
     width: 100%;
+    text-align: center;
+  
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
   }
 
   .hero {
     flex-direction: column;
-    justify-content: center;
     text-align: center;
-    padding: 3rem 1.5rem;
+    padding: 1rem 1.5rem;
     background-position: right;
+  
   }
 
   .hero-left {
@@ -259,16 +306,18 @@ section p {
   }
 
   .hero-left h1 {
-    font-size: 2rem;
+    font-size: 3.5rem;
   }
 
   .hero-left p {
-    font-size: 1rem;
+    font-size: 2rem;
+    margin-top: 50px;
   }
 
   .cta {
-    font-size: 1rem;
+    font-size: 2rem;
     padding: 0.6rem 1.2rem;
+    margin-top: 80px;
   }
 
   .hero-right {
@@ -318,67 +367,8 @@ section p {
   }
 }
 
-/* === Optimization Tweaks === */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Reduce heavy shadow on mobile */
 @media screen and (max-width: 480px) {
   .album-container img {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
   }
-}
-/* ... all previous styles remain above this line */
-
-/* Hamburger Icon */
-.hamburger {
-  display: none;
-  font-size: 1.8rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 11;
-}
-
-/* Mobile Navbar */
-@media screen and (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.95);
-    width: 100%;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 0;
-    transform: translateY(-200%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 10;
-  }
-
-  .nav-links.open {
-    transform: translateY(0);
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links a {
-    display: block;
-    width: 100%;
-    padding: 0.8rem;
-  }
-}
-
-/* Touch scrolling fix */
-html {
-  -webkit-overflow-scrolling: touch;
 }
