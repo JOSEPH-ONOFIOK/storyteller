@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import Typed from "typed.js";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {
@@ -18,21 +17,8 @@ import albumCover from "./assets/images/album.jpeg";
 import bioImage from "./assets/images/oracle-portrait.jpeg";
 
 const App = () => {
-  const typedRef = useRef(null);
   const progressRef = useRef(null);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const typed = new Typed(typedRef.current, {
-      strings: ["Oracle the Storyteller", "Gen Z Meets Millennial Wisdom"],
-      typeSpeed: 50,        // Slower typing
-      backSpeed: 25,
-      backDelay: 2000,
-      loop: true,
-    });
-
-    return () => typed.destroy();
-  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -90,7 +76,7 @@ const App = () => {
 
       <header className="hero">
         <div className="hero-left fade-section">
-          <h1 ref={typedRef}></h1>
+          <h1 className="hero-title">Oracle the Storyteller</h1>
           <p>Blending Gen Z energy with millennial wisdom.</p>
           <a href="#latest" className="cta">Listen Now</a>
         </div>

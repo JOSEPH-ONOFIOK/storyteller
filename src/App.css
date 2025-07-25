@@ -84,10 +84,17 @@ img {
   justify-content: space-between;
   min-height: 100vh;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, rgba(15,15,15,0.8), rgba(0,0,0,0.4)), url('./assets/images/oracle-portrait.jpeg');
+  background: linear-gradient(to right, rgba(15,15,15,0.8), rgba(0,0,0,0.4)), url('./assets/images/album.jpeg');
   background-size: cover;
   background-position: center right;
   position: relative;
+}
+.hero-title {
+  font-family: 'Unbounded', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #e91e63;
+  margin-bottom: 1rem;
 }
 
 .hero-left {
@@ -107,6 +114,7 @@ img {
   font-size: 1.7rem;
   margin-bottom: 2rem;
   color: #ccc;
+   font-family: 'Unbounded', sans-serif;
 }
 
 .cta {
@@ -255,6 +263,7 @@ section p {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem;
+   
   }
 
   .hamburger {
@@ -298,7 +307,7 @@ section p {
     text-align: center;
     padding: 1rem 1.5rem;
     background-position: right;
-  
+   
   }
 
   .hero-left {
@@ -306,13 +315,18 @@ section p {
   }
 
   .hero-left h1 {
-    font-size: 3.5rem;
+    font-size: 3.0rem;
+    padding-top: 150px;
   }
+.hero-left p {
+  font-size: 1.5rem;
+  margin-top: 50px;
+  background: linear-gradient(to right, #a8e6cf, #dcedc1, #a1f4a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .hero-left p {
-    font-size: 2rem;
-    margin-top: 50px;
-  }
+
 
   .cta {
     font-size: 2rem;
