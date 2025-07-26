@@ -13,8 +13,10 @@ import {
 import "./App.css";
 
 import heroImage from "./assets/images/oracle-portrait.jpeg";
-import albumCover from "./assets/images/album.jpeg";
+import albumCover from "./assets/images/big.jpeg";
 import bioImage from "./assets/images/oracle-portrait.jpeg";
+
+import comingSoonImage from "./assets/images/album.jpeg";
 
 const App = () => {
   const progressRef = useRef(null);
@@ -69,7 +71,7 @@ const App = () => {
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li><a href="#welcome" onClick={() => setMenuOpen(false)}>Welcome</a></li>
           <li><a href="#latest" onClick={() => setMenuOpen(false)}>Latest</a></li>
-          <li><a href="#bio" onClick={() => setMenuOpen(false)}>Bio</a></li>
+          <li><a href="#coming-soon" onClick={() => setMenuOpen(false)}>Coming Soon</a></li>
           <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
         </ul>
       </nav>
@@ -82,10 +84,15 @@ const App = () => {
         </div>
       </header>
 
-      <section id="welcome" className="fade-section welcome-section parallax">
-        <div className="welcome-content">
-          <h2>Welcome to Oracle's World</h2>
-          <p>Dive into the unique sound that bridges generations.</p>
+       <section id="welcome" className="fade-section bio parallax">
+        <div className="bio-img">
+          <img src={bioImage} alt="Oracle Bio" />
+        </div>
+        <div className="bio-text">
+          <h2>Meet Oracle</h2>
+          <p>
+            Welcome to ORACLE RECORDS, the home of storytelling fans. Oracle shares his experience through music. Join our group chat to discuss your favorite sounds, participate in giveaways, or simply make new friends. Whether you're here to listen or share your story — you're welcome. Stay tuned! 🐐
+          </p>
         </div>
       </section>
 
@@ -100,17 +107,15 @@ const App = () => {
         </div>
       </section>
 
-      <section id="bio" className="fade-section bio parallax">
-        <div className="bio-img">
-          <img src={bioImage} alt="Oracle Bio" />
-        </div>
-        <div className="bio-text">
-          <h2>Meet Oracle</h2>
-          <p>
-            Welcome to ORACLE RECORDS, the home of storytelling fans. Oracle shares his experience through music. Join our group chat to discuss your favorite sounds, participate in giveaways, or simply make new friends. Whether you're here to listen or share your story — you're welcome. Stay tuned! 🐐
-          </p>
-        </div>
+      {/* === Coming Soon Section === */}
+      <section id="coming-soon" className="fade-section coming-soon parallax">
+        <h2>Coming Soon</h2>
+        <p>Get ready for Oracle’s next masterpiece — dropping soon. Stay tuned for the vibe!</p>
+        <img src={comingSoonImage} alt="Upcoming Project" />
+        {/* Replace with comingSoonImage if using a separate file */}
       </section>
+
+     
 
       <section id="contact" className="fade-section contact parallax">
         <h2>Connect with Oracle</h2>

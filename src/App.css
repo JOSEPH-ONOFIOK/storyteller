@@ -2,7 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bubblegum', sans-serif;
   scroll-behavior: smooth;
   background: linear-gradient(to bottom, #0f0f0f, #1c1c1c);
   color: #fff;
@@ -71,6 +71,7 @@ img {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
+  font-family: 'Walter Turncoat', sans-serif;
 }
 
 .nav-links a:hover {
@@ -84,17 +85,10 @@ img {
   justify-content: space-between;
   min-height: 100vh;
   padding: 4rem 2rem;
-  background: linear-gradient(to right, rgba(15,15,15,0.8), rgba(0,0,0,0.4)), url('./assets/images/album.jpeg');
+  background: linear-gradient(to right, rgba(15,15,15,0.8), rgba(0,0,0,0.4)), url('./assets/images/hero.png');
   background-size: cover;
   background-position: center right;
   position: relative;
-}
-.hero-title {
-  font-family: 'Unbounded', sans-serif;
-  font-size: 5rem;
-  font-weight: 700;
-  color: #e91e63;
-  margin-bottom: 1rem;
 }
 
 .hero-left {
@@ -103,18 +97,22 @@ img {
   animation: fadeInUp 1s ease-out;
 }
 
-.hero-left h1 {
-  font-size: 5rem;
-  font-weight: bold;
+.hero-title {
+  font-family: 'Grechen Fuemen', sans-serif;
+  font-size: 8rem;
+  font-weight: 900;
   color: #e91e63;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  margin-top: -10rem;
 }
 
 .hero-left p {
   font-size: 1.7rem;
   margin-bottom: 2rem;
-  color: #ccc;
-   font-family: 'Unbounded', sans-serif;
+  background: linear-gradient(to right, #a8e6cf, #dcedc1, #a1f4a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Walter Turncoat', sans-serif;
 }
 
 .cta {
@@ -131,24 +129,28 @@ img {
   background-color: #c2185b;
 }
 
-/* === Section Styles === */
+/* === General Section Styles === */
 section {
   padding: 6rem 2rem;
   text-align: center;
+  
 }
 
 section h2 {
   font-size: 2.5rem;
   color: #e91e63;
-  margin-bottom: 1.5rem;
+ 
+  font-family: 'Grechen Fuemen', sans-serif;
 }
 
 section p {
   color: #ccc;
   font-size: 1.1rem;
+  font-family: 'Walter Turncoat', sans-serif;
+   margin-bottom: -4.5rem;
 }
 
-/* === Welcome, Latest, Bio, Contact === */
+/* === Welcome / Latest Release / Bio / Contact Sections === */
 .album-container {
   display: flex;
   flex-direction: column;
@@ -170,6 +172,7 @@ section p {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: 'Walter Turncoat', sans-serif;
   transition: color 0.3s;
 }
 
@@ -194,6 +197,7 @@ section p {
 .bio-text {
   max-width: 600px;
   text-align: left;
+  font-family: 'Walter Turncoat', sans-serif;
 }
 
 .contact-icons a {
@@ -208,6 +212,38 @@ section p {
   color: #e91e63;
 }
 
+/* === Coming Soon Section === */
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  background: linear-gradient(to right, #1c1c1c, #000);
+}
+
+.coming-soon h2 {
+  font-size: 3rem;
+  color: #e91e63;
+  margin-bottom: 1rem;
+  font-family: 'Grechen Fuemen', sans-serif;
+}
+
+.coming-soon p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 600px;
+  font-family: 'Walter Turncoat', sans-serif;
+  margin-bottom: 2rem;
+}
+
+.coming-soon img {
+  width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
 /* === Footer === */
 .footer {
   background: #111;
@@ -215,16 +251,17 @@ section p {
   text-align: center;
   font-size: 0.9rem;
   color: #888;
+  font-family: 'Walter Turncoat', sans-serif;
 }
 
-/* === Parallax === */
+/* === Parallax Effect === */
 .parallax {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
-/* === Animation === */
+/* === Scroll Animations === */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -233,15 +270,6 @@ section p {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }
 
@@ -260,15 +288,12 @@ section p {
 @media screen and (max-width: 768px) {
   .navbar {
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
     padding: 1rem 1.5rem;
-   
   }
 
   .hamburger {
     display: block;
-    margin-left: auto;
   }
 
   .nav-links {
@@ -287,18 +312,16 @@ section p {
 
   .nav-links.open {
     transform: translateY(0);
-      margin-top: -5px;
+    margin-top: -5px;
   }
 
   .nav-links li {
     width: 100%;
     text-align: center;
-  
   }
 
   .nav-links a {
     display: block;
-    width: 100%;
     padding: 0.8rem;
   }
 
@@ -307,50 +330,25 @@ section p {
     text-align: center;
     padding: 1rem 1.5rem;
     background-position: right;
-   
-  }
-
-  .hero-left {
-    max-width: 100%;
   }
 
   .hero-left h1 {
-    font-size: 3.0rem;
-    padding-top: 150px;
+    font-size: 5rem;
+    padding-top: 300px;
   }
-.hero-left p {
-  font-size: 1.5rem;
-  margin-top: 50px;
-  background: linear-gradient(to right, #a8e6cf, #dcedc1, #a1f4a1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-
+  .hero-left p {
+    font-size: 1.5rem;
+    margin-top: 50px;
+    background: linear-gradient(to right, #a8e6cf, #dcedc1, #a1f4a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   .cta {
     font-size: 2rem;
     padding: 0.6rem 1.2rem;
     margin-top: 40px;
-  }
-
-  .hero-right {
-    width: 100%;
-    min-height: 300px;
-    border-radius: 10px;
-    margin-top: 2rem;
-  }
-
-  section {
-    padding: 4rem 1.5rem;
-  }
-
-  section h2 {
-    font-size: 2rem;
-  }
-
-  section p {
-    font-size: 1rem;
   }
 
   .album-container img {
