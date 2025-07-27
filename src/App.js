@@ -6,6 +6,7 @@ import {
   FaApple,
   FaInstagram,
   FaYoutube,
+  FaTwitter,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
@@ -15,8 +16,8 @@ import "./App.css";
 import heroImage from "./assets/images/oracle-portrait.jpeg";
 import albumCover from "./assets/images/big.jpeg";
 import bioImage from "./assets/images/oracle-portrait.jpeg";
-
 import comingSoonImage from "./assets/images/album.jpeg";
+import audiomackLogo from "./assets/images/audiomack-icon.webp"; // <- Make sure this path is correct
 
 const App = () => {
   const progressRef = useRef(null);
@@ -84,7 +85,7 @@ const App = () => {
         </div>
       </header>
 
-       <section id="welcome" className="fade-section bio parallax">
+      <section id="welcome" className="fade-section bio parallax">
         <div className="bio-img">
           <img src={bioImage} alt="Oracle Bio" />
         </div>
@@ -101,27 +102,28 @@ const App = () => {
         <div className="album-container">
           <img src={albumCover} alt="Oracle Album" />
           <div className="stream-links">
-            <a href="#"><FaSpotify /> Spotify</a>
-            <a href="#"><FaApple /> Apple Music</a>
+            <a href="https://open.spotify.com/album/22VayDuIQtwVeZ3skPn94L?si=md330L9gQn2o7Lj4XrWuOQ" target="_blank" rel="noopener noreferrer"><FaSpotify /> Spotify</a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><FaApple /> Apple Music</a>
+             <a href="https://audiomack.com/oraclethestoryteller" target="_blank" rel="noopener noreferrer">
+            <img src={audiomackLogo} alt="Audiomack" style={{ width: "24px", height: "24px", verticalAlign: "middle" }} /> Audiomack
+          </a>
           </div>
         </div>
       </section>
 
-      {/* === Coming Soon Section === */}
       <section id="coming-soon" className="fade-section coming-soon parallax">
         <h2>Coming Soon</h2>
         <p>Get ready for Oracle’s next masterpiece — dropping soon. Stay tuned for the vibe!</p>
         <img src={comingSoonImage} alt="Upcoming Project" />
-        {/* Replace with comingSoonImage if using a separate file */}
       </section>
-
-     
 
       <section id="contact" className="fade-section contact parallax">
         <h2>Connect with Oracle</h2>
         <div className="contact-icons">
-          <a href="#"><FaInstagram /></a>
-          <a href="#"><FaYoutube /></a>
+          <a href="https://www.instagram.com/oraclethestoryteller?igsh=dXhhODJmOXNld3Q0&utm_source=qr" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a href="https://youtube.com/@oracledstoryteller?si=0i_2NqT0OHT_UOYY" target="_blank" rel="noopener noreferrer"><FaYoutube /></a>
+          <a href="https://x.com/umohralph?s=11" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+         
         </div>
       </section>
 
