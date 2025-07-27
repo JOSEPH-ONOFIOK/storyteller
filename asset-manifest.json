@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.c4424c4d.css",
-    "main.js": "/static/js/main.c116d9d5.js",
+    "main.css": "/static/css/main.ee8f7a23.css",
+    "main.js": "/static/js/main.0a48d613.js",
     "static/media/hero.png": "/static/media/hero.4fc197a2c57bba0a9d2f.png",
+    "static/media/slyvester.jpeg": "/static/media/slyvester.9745c77dab39b0c6b00b.jpeg",
     "static/media/oracle-portrait.jpeg": "/static/media/oracle-portrait.7bf697d967a2c10c519e.jpeg",
     "static/media/album.jpeg": "/static/media/album.633fe738f944440e4296.jpeg",
     "static/media/big.jpeg": "/static/media/big.25aa96bf0f9918f85f3e.jpeg",
     "static/media/audiomack-icon.webp": "/static/media/audiomack-icon.166fb855ea013a3b4462.webp",
     "index.html": "/index.html",
-    "main.c4424c4d.css.map": "/static/css/main.c4424c4d.css.map",
-    "main.c116d9d5.js.map": "/static/js/main.c116d9d5.js.map"
+    "main.ee8f7a23.css.map": "/static/css/main.ee8f7a23.css.map",
+    "main.0a48d613.js.map": "/static/js/main.0a48d613.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4424c4d.css",
-    "static/js/main.c116d9d5.js"
+    "static/css/main.ee8f7a23.css",
+    "static/js/main.0a48d613.js"
   ]
 }
