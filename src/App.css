@@ -166,7 +166,7 @@ section p {
   align-items: center;
   gap: 0.5rem;
   margin: 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #fff;
   text-decoration: none;
   font-family: 'Walter Turncoat', sans-serif;
@@ -368,6 +368,8 @@ display: flex;
 
   .stream-links a {
     font-size: 1rem;
+    align-items: left;
+    justify-content: center;
   }
 
   .contact-icons a {
