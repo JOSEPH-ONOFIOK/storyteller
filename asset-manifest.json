@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.e32ddb5b.css",
+    "main.css": "/static/css/main.c7ea7df5.css",
     "main.js": "/static/js/main.31809edd.js",
     "static/media/hero.png": "/static/media/hero.4fc197a2c57bba0a9d2f.png",
     "static/media/slyvester.jpeg": "/static/media/slyvester.9745c77dab39b0c6b00b.jpeg",
@@ -9,11 +9,11 @@
     "static/media/big.jpeg": "/static/media/big.25aa96bf0f9918f85f3e.jpeg",
     "static/media/audiomack-icon.webp": "/static/media/audiomack-icon.166fb855ea013a3b4462.webp",
     "index.html": "/index.html",
-    "main.e32ddb5b.css.map": "/static/css/main.e32ddb5b.css.map",
+    "main.c7ea7df5.css.map": "/static/css/main.c7ea7df5.css.map",
     "main.31809edd.js.map": "/static/js/main.31809edd.js.map"
   },
   "entrypoints": [
-    "static/css/main.e32ddb5b.css",
+    "static/css/main.c7ea7df5.css",
     "static/js/main.31809edd.js"
   ]
 }
