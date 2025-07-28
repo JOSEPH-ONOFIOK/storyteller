@@ -131,6 +131,10 @@ const App = () => {
         <h2>Coming Soon</h2>
         <p>Get ready for Oracle’s next masterpiece — dropping soon. Stay tuned for the vibe!</p>
         <img src={comingSoonImage} alt="Upcoming Project Artwork" className="coming-soon-img" />
+          <div className="teaser">
+          <h3>Zombie (Coming Soon) – August 7, 2025</h3>
+          <CountdownTimer targetDate="2025-08-07T00:00:00" />
+        </div>
 
         <div className="teaser">
           <h3>SLYvester (Money Dey Come, Money Dey Go) – August 1, 2025</h3>
@@ -161,4 +165,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App; 
