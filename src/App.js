@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, Suspense, lazy } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import {
@@ -12,14 +12,17 @@ import {
 } from "react-icons/fa";
 
 import "./App.css";
-import CountdownTimer from "./CountdownTimer";
 
+// Asset imports
 import heroImage from "./assets/images/oracle-portrait.jpeg";
 import albumCover from "./assets/images/big.jpeg";
 import bioImage from "./assets/images/oracle-portrait.jpeg";
 import comingSoonImage from "./assets/images/album.jpeg";
 import audiomackLogo from "./assets/images/audiomack-icon.webp";
 import slyvesterImage from "./assets/images/slyvester.jpeg";
+
+// Lazy load CountdownTimer
+const CountdownTimer = lazy(() => import("./CountdownTimer"));
 
 const App = () => {
   const progressRef = useRef(null);
@@ -57,6 +60,10 @@ const App = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.title = "Oracle the Storyteller";
   }, []);
 
   return (
@@ -120,9 +127,13 @@ const App = () => {
             <a href="https://music.apple.com/gb/artist/oraclethestoryteller/1822190403" target="_blank" rel="noopener noreferrer">
               <FaApple /> Apple Music
             </a>
-           <a href="https://audiomack.com/oraclethestoryteller" target="_blank" rel="noopener noreferrer">
-            <img src={audiomackLogo} alt="Audiomack" style={{ width: "24px", height: "24px", verticalAlign: "middle" }} /> Audiomack
-          </a>
+            <a href="https://audiomack.com/oraclethestoryteller" target="_blank" rel="noopener noreferrer">
+              <img
+                src={audiomackLogo}
+                alt="Audiomack"
+                style={{ width: "24px", height: "24px", verticalAlign: "middle" }}
+              /> Audiomack
+            </a>
           </div>
         </div>
       </section>
@@ -131,16 +142,19 @@ const App = () => {
         <h2>Coming Soon</h2>
         <p>Get ready for Oracle’s next masterpiece — dropping soon. Stay tuned for the vibe!</p>
         <img src={comingSoonImage} alt="Upcoming Project Artwork" className="coming-soon-img" />
-          <div className="teaser">
-          <h3>Zombie (Coming Soon) – August 7, 2025</h3>
-          <CountdownTimer targetDate="2025-08-07T00:00:00" />
-        </div>
 
-        <div className="teaser">
-          <h3>SLYvester (Money Dey Come, Money Dey Go) – August 1, 2025</h3>
-          <img src={slyvesterImage} alt="SLYvester Cover" className="slyvester-img" />
-          <CountdownTimer targetDate="2025-08-01T00:00:00" />
-        </div>
+        <Suspense fallback={<div>Loading countdown...</div>}>
+          <div className="teaser">
+            <h3>Zombie (Coming Soon) – August 7, 2025</h3>
+            <CountdownTimer targetDate="2025-08-07T00:00:00" />
+          </div>
+
+          <div className="teaser">
+            <h3>SLYvester (Money Dey Come, Money Dey Go) – August 1, 2025</h3>
+            <img src={slyvesterImage} alt="SLYvester Cover" className="slyvester-img" />
+            <CountdownTimer targetDate="2025-08-01T00:00:00" />
+          </div>
+        </Suspense>
       </section>
 
       <section id="contact" className="fade-section contact parallax">
@@ -165,4 +179,4 @@ const App = () => {
   );
 };
 
-export default App; 
+export default App;
